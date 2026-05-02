@@ -34,7 +34,7 @@ export default function AssetDetail({ params }: { params: Promise<{ symbol: stri
           >
             <div className="flex justify-between items-start mb-8">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/20 to-purple-500/20 flex items-center justify-center font-bold text-xl border border-primary/20">
+                <div className="w-14 h-14 rounded-full bg-linear-to-br from-primary/20 to-purple-500/20 flex items-center justify-center font-bold text-xl border border-primary/20">
                   {asset.symbol[0]}
                 </div>
                 <div>
@@ -76,7 +76,7 @@ export default function AssetDetail({ params }: { params: Promise<{ symbol: stri
                     fontSize={12} 
                     tickLine={false} 
                     axisLine={false} 
-                    tickFormatter={(val) => `$${val.toLocaleString()}`}
+                    tickFormatter={(val: number) => `$${val.toLocaleString()}`}
                     dx={-10}
                   />
                   <Tooltip 

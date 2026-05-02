@@ -1,29 +1,33 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { LayoutDashboard, Wallet, ArrowRightLeft, Settings, PieChart } from "lucide-react";
 
 export function Sidebar() {
+  const pathname = usePathname();
+  
   const menuItems = [
-    { icon: LayoutDashboard, label: "Overview", href: "/" },
-    { icon: PieChart, label: "Market", href: "#" },
-    { icon: Wallet, label: "Portfolio", href: "#" },
-    { icon: ArrowRightLeft, label: "Transactions", href: "#" },
-    { icon: Settings, label: "Settings", href: "#" },
+    { icon: LayoutDashboard, label: "Dashboard", href: "/" },
+    { icon: Wallet, label: "Portfolio", href: "/portfolio" },
+    { icon: ArrowRightLeft, label: "Transactions", href: "/transactions" },
+    { icon: Settings, label: "Settings", href: "/settings" },
   ];
 
   return (
     <aside className="w-64 border-r border-border bg-card/50 backdrop-blur-sm hidden md:flex flex-col">
       <div className="h-16 flex items-center px-6 border-b border-border">
-        <div className="flex items-center gap-2 font-bold text-xl text-primary tracking-tight">
+        <Link href="/" className="flex items-center gap-2 font-bold text-xl text-primary tracking-tight">
           <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
             <div className="w-4 h-4 rounded-sm bg-primary" />
           </div>
           Nexus<span className="text-foreground">Data</span>
-        </div>
+        </Link>
       </div>
       
       <nav className="flex-1 py-6 px-4 space-y-1">
         {menuItems.map((item, index) => {
-          const isActive = item.href === "/";
+          const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
           return (
             <Link
               key={index}
