@@ -39,8 +39,8 @@ export default function Watchlist() {
               <tr className="border-b border-border bg-muted/20 text-xs uppercase text-muted-foreground">
                 <th className="p-4 font-medium">Asset</th>
                 <th className="p-4 font-medium text-right">Balance</th>
-                <th className="p-4 font-medium text-right">Value (USD)</th>
-                <th className="p-4 font-medium text-right">24h Return</th>
+                <th className="p-4 font-medium text-right hidden sm:table-cell">Value (USD)</th>
+                <th className="p-4 font-medium text-right hidden md:table-cell">24h Return</th>
               </tr>
             </thead>
             <tbody>
@@ -60,10 +60,10 @@ export default function Watchlist() {
                   <td className="p-4 text-right font-medium">
                     {item.amount} {item.symbol}
                   </td>
-                  <td className="p-4 text-right font-medium">
+                  <td className="p-4 text-right font-medium hidden sm:table-cell">
                     {formatCurrency(item.value)}
                   </td>
-                  <td className={`p-4 text-right font-medium ${item.change >= 0 ? 'text-emerald-500' : 'text-rose-500'}`}>
+                  <td className={`p-4 text-right font-medium hidden md:table-cell ${item.change >= 0 ? 'text-emerald-500' : 'text-rose-500'}`}>
                     {item.change >= 0 ? '+' : ''}{item.change}%
                   </td>
                 </tr>

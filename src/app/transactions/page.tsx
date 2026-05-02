@@ -36,10 +36,10 @@ export default function MarketActivity() {
             <thead>
               <tr className="border-b border-border bg-muted/20 text-xs uppercase text-muted-foreground">
                 <th className="p-4 font-medium">Type</th>
-                <th className="p-4 font-medium">Date</th>
+                <th className="p-4 font-medium hidden sm:table-cell">Date</th>
                 <th className="p-4 font-medium text-right">Amount</th>
                 <th className="p-4 font-medium text-right">Price</th>
-                <th className="p-4 font-medium text-center">Status</th>
+                <th className="p-4 font-medium text-center hidden md:table-cell">Status</th>
               </tr>
             </thead>
             <tbody>
@@ -55,16 +55,16 @@ export default function MarketActivity() {
                       <div className="font-medium">{tx.type} {tx.asset}</div>
                     </div>
                   </td>
-                  <td className="p-4 text-muted-foreground text-sm">
+                  <td className="p-4 text-muted-foreground text-sm hidden sm:table-cell">
                     {tx.date}
                   </td>
                   <td className="p-4 text-right font-medium">
                     {tx.amount} {tx.asset}
                   </td>
                   <td className="p-4 text-right text-muted-foreground">
-                    {tx.asset === 'USD' ? '-' : formatCurrency(tx.price)}
+                    {tx.asset === 'USDT' ? '-' : formatCurrency(tx.price)}
                   </td>
-                  <td className="p-4 text-center">
+                  <td className="p-4 text-center hidden md:table-cell">
                     <span className={`px-2.5 py-1 text-xs font-medium rounded-full ${
                       tx.status === 'Verified' ? 'bg-emerald-500/10 text-emerald-500' : 'bg-amber-500/10 text-amber-500'
                     }`}>

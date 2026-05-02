@@ -49,8 +49,8 @@ export function AssetTable() {
               <th className="p-4 font-medium">Asset</th>
               <th className="p-4 font-medium text-right">Price</th>
               <th className="p-4 font-medium text-right">24h Change</th>
-              <th className="p-4 font-medium text-right hidden sm:table-cell">Market Cap</th>
-              <th className="p-4 font-medium text-center">Status/Insight</th>
+              <th className="p-4 font-medium text-right hidden md:table-cell">Market Cap</th>
+              <th className="p-4 font-medium text-center hidden sm:table-cell">Status/Insight</th>
               <th className="p-4 font-medium text-right">Action</th>
             </tr>
           </thead>
@@ -88,10 +88,10 @@ export function AssetTable() {
                     {Math.abs(asset.change24h)}%
                   </div>
                 </td>
-                <td className="p-4 text-right hidden sm:table-cell text-muted-foreground">
+                <td className="p-4 text-right hidden md:table-cell text-muted-foreground">
                   ${formatCompactNumber(asset.marketCap)}
                 </td>
-                <td className="p-4 text-center">
+                <td className="p-4 text-center hidden sm:table-cell">
                   <span className={cn(
                     "px-2.5 py-1 text-xs font-medium rounded-full border",
                     asset.insight === 'Bullish' && "border-emerald-500/30 text-emerald-500 bg-emerald-500/5",
