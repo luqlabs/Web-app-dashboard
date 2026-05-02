@@ -129,9 +129,6 @@ export default function AssetDetail({ params }: { params: Promise<{ symbol: stri
               </div>
             </div>
             
-            <button className="w-full mt-6 bg-primary text-primary-foreground font-semibold py-3 rounded-xl hover:bg-primary/90 transition-all active:scale-[0.98]">
-              Trade {asset.symbol}
-            </button>
           </div>
         </motion.div>
       </div>

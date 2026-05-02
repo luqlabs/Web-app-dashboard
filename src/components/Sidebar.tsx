@@ -9,9 +9,9 @@ export function Sidebar() {
   
   const menuItems = [
     { icon: LayoutDashboard, label: "Dashboard", href: "/" },
-    { icon: Wallet, label: "Portfolio", href: "/portfolio" },
-    { icon: ArrowRightLeft, label: "Transactions", href: "/transactions" },
-    { icon: Settings, label: "Settings", href: "/settings" },
+    { icon: Wallet, label: "Watchlist", href: "/portfolio" },
+    { icon: ArrowRightLeft, label: "Market Activity", href: "/transactions" },
+    { icon: Settings, label: "Preferences", href: "/settings" },
   ];
 
   return (
@@ -45,15 +45,6 @@ export function Sidebar() {
         })}
       </nav>
 
-      <div className="p-4 border-t border-border">
-        <div className="p-4 bg-muted/50 rounded-xl border border-border/50">
-          <p className="text-sm font-medium">Pro Plan Trial</p>
-          <p className="text-xs text-muted-foreground mt-1 mb-3">12 days left on your trial</p>
-          <button className="w-full text-xs bg-primary text-primary-foreground font-medium py-2 rounded-lg hover:bg-primary/90 transition-colors">
-            Upgrade Now
-          </button>
-        </div>
-      </div>
     </aside>
   );
 }
